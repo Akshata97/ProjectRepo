@@ -1,4 +1,4 @@
-package com.lti.entity;
+package java.com.lti.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,12 +11,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TBL_ANSWER_LEVEL1")
-public class AnswerLevel1 {
+@Table(name="TBL_ANSWER_LEVEL2")
+public class AnswerLevel2 {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "anslevel1")
-	@SequenceGenerator(name="anslevel1", sequenceName = "SEQ_ANS_LEVEL1", allocationSize = 1 )
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "anslevel2")
+	@SequenceGenerator(name="anslevel2", sequenceName = "SEQ_ANS_LEVEL2", allocationSize = 1 )
 	@Column(name="ANSWER_ID")
 	private int answerId;
 	
@@ -28,9 +28,8 @@ public class AnswerLevel1 {
 	
 	@OneToOne
 	@JoinColumn(name="QUESTION_ID")
-	Level1 level1;
+	Level2 level2;
 	
-
 	public int getAnswerId() {
 		return answerId;
 	}
@@ -54,16 +53,14 @@ public class AnswerLevel1 {
 	public void setFlag(int flag) {
 		this.flag = flag;
 	}
-
-	public Level1 getLevel1() {
-		return level1;
+	
+	public Level2 getLevel2() {
+		return level2;
 	}
 
-	public void setLevel1(Level1 level1) {
-		this.level1 = level1;
+	public void setLevel2(Level2 level2) {
+		this.level2 = level2;
 	}
 
 	
-	
-
 }

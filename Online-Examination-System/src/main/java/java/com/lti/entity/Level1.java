@@ -1,4 +1,4 @@
-package com.lti.entity;
+package java.com.lti.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,12 +12,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TBL_LEVEL2")
-public class Level2 {
+@Table(name="TBL_LEVEL1")
+public class Level1 {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "level2")
-	@SequenceGenerator(name="level2", sequenceName = "SEQ_LEVEL2", allocationSize = 1 )
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "level1")
+	@SequenceGenerator(name="level1", sequenceName = "SEQ_LEVEL1", allocationSize = 1 )
 	@Column(name="QUESTION_ID")
 	private int questionId;
 	
@@ -28,8 +28,8 @@ public class Level2 {
 	@JoinColumn(name="SUBJECT_ID")
 	Subject subject;
 	
-	@OneToOne(mappedBy="level2")
-	AnswerLevel2 answerlevel2;
+	@OneToOne(mappedBy="level1")
+	AnswerLevel1 answerlevel1;
 	
 	@OneToOne
 	@JoinColumn(name="LEVEL_ID")
@@ -58,13 +58,13 @@ public class Level2 {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-	
-	public AnswerLevel2 getAnswerlevel2() {
-		return answerlevel2;
+
+	public AnswerLevel1 getAnswerlevel1() {
+		return answerlevel1;
 	}
 
-	public void setAnswerlevel2(AnswerLevel2 answerlevel2) {
-		this.answerlevel2 = answerlevel2;
+	public void setAnswerlevel1(AnswerLevel1 answerlevel1) {
+		this.answerlevel1 = answerlevel1;
 	}
 	
 	public Level getLevel() {
@@ -74,7 +74,4 @@ public class Level2 {
 	public void setLevel(Level level) {
 		this.level = level;
 	}
-
-
-	
 }
